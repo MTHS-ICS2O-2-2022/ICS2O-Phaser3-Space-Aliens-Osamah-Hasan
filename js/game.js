@@ -8,10 +8,11 @@
 
 //scene import statments
 import splashScene from "./splashScene.js"
+import TitleScene from "./titleScene.js"
 
 // create the new scenes
 const splashScene = new splashScene()
-
+const titleScene = new TitleScene()
 /**
  * Start Phaser Game.
  */
@@ -40,6 +41,7 @@ console.log(game)
 // load scenes 
 // Note: remeber any "key" is golbal CAN NOT be reused!
 game.scene.add("splashScene", splashScene)
+game.scene.add("titleScene", titleScene)
 
 // the  start scene
 game.scene.start("splashScene")
