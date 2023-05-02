@@ -1,67 +1,68 @@
 /* global Phaser */
 
-//copyright (c) 2023 Osamah Hasan All right reserved
+// Copyright (c) 2023 Osamah Hasan All rights reserved
 //
 //Created by: Osamah Hasan
 //Created on: Apr 2023
 //This is the Splash Scene
 
-/** 
- * This class is the Splasch Scene.
+/**
+ * This class is the Splash Scene
  */
 class SplashScene extends Phaser.Scene {
     /**
      * This methed is the construtor.
      */
-    constructor(){
-        super({key: "splashScene"})
+    constructor() {
+        super({ key: "splashScene" })
 
-        this.splashSceneBackgroundImage = null
+        this.splashBackgroundImage = null
     }
 
     /**
-     * Can be defind on your own Scenes.
-     * This methed is called by the Scene Manager when the scene start,
-     *   before pereload() and create().
+     * Can be defined on your own Scenes.
+     * This method is called by the Scene Manger when the scene starts,
+     *    before preload() and create().
      * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
      */
-    Infinity(data) {
+    init(data) {
         this.cameras.main.setBackgroundColor("ffffff")
     }
 
     /**
-     * Can be defined on your own Scenes.
+     * Can be defined defined on your own Scene.
      * Use it to load assets.
      */
-    preload(){
+    preload() {
         console.log("Splash Scene")
-        this.load.image("splashSceneBackground", "./assets/splashSceneBackground.png")
+        this.load.image("splashBackground", "./assets/splashSceneImage.png")
     }
 
     /**
-     * Can be defined on your own Scenes.
-     * Use it to create your game objects.
-     * @param {object} data - Any data passed via ScenePlugin.add() or ScenePludin.start().
+     * Can be difined on your own Scene.
+     * Use it to create your gmae object.
+     * @param {object} data - Any data passed via ScenePlugin.add() or ScenePulgin.start().
      */
-    create(data){
+    create(data) {
         this.splashSceneBackgroundImage = this.add.sprite(
             0,
             0,
-            "splashSceneBackground"
+            "splashBackground"
         )
-        this.splashSceneBackgoroundImage.x = 1920 / 2
-        this.splashSceneBackgoroundImage.y = 1080 / 2
+        this.splashSceneBackgroundImage.x = 1920 / 2
+        this.splashSceneBackgroundImage.y = 1080 / 2
     }
 
     /**
-     * Should be overriddem by your own Scenes.
-     * This method is called once per game step while scene is running.
+     * Should be overriddn by your own Scene.
+     * This method is called once per game step while the scene is runing.
      * @param {number} time - This current time.
      * @param {number} delta - This delta time in ms since the last frame.
      */
     update(time, delta) {
-        if(time > 3000)
+      if (time > 3000) {
         this.scene.switch("titleScene")
+      }
     }
 }
 
