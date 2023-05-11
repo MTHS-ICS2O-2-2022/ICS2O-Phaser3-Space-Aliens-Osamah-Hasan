@@ -1,6 +1,6 @@
 /* global Phaser */
 
-// Copyright (C) 2023 Osamah Hasan All right reserved.
+// Copyright (c) 2023 Osamah Hasan All right reserved.
 //
 //Created by: Osamah Hasan
 //Created on: Apr 2023
